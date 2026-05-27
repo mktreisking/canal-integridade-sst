@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canal de Denúncias</title>
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+<header>
+<img src="img/logo-arcel.png" class="logo">
+
+<nav>
+<a href="index.html">Início</a>
+<a href="denuncias.html">Denúncias</a>
+<a href="#">Sugestões</a>
+<a href="#">NR-1</a>
+<a href="#">Contato</a>
+</nav>
+</header>
+
+<section class="page-title">
+<h1>Canal de Denúncias</h1>
+<p>Relate situações de risco, irregularidades, reclamações, sugestões ou dúvidas relacionadas à segurança do trabalho.</p>
+</section>
+
+<section class="form-area">
+<form action="https://formsubmit.co/sgi_sms@arcel-es.com" method="POST" enctype="multipart/form-data">
+
+<label>Nome</label>
+<input type="text" name="nome" placeholder="Opcional">
+
+<label>Setor</label>
+<input type="text" name="setor" placeholder="Ex: Produção, Manutenção, Administrativo">
+
+<label>Tipo de relato</label>
+<select name="tipo">
+<option>Denúncia</option>
+<option>Reclamação</option>
+<option>Sugestão</option>
+<option>Risco de acidente</option>
+<option>Dúvida sobre segurança</option>
+<option>Envio de evidência</option>
+</select>
+
+<label>Descrição</label>
+<textarea name="mensagem" placeholder="Descreva com detalhes o ocorrido..."></textarea>
+
+<label>Anexar foto, vídeo, áudio ou documento</label>
+<input type="file" name="arquivo">
+
+<label class="anonimo">
+<input type="checkbox" name="anonimo">
+Desejo permanecer anônimo
+</label>
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://mktreisking.github.io/canal-integridade-sst/">
+
+<button type="submit">Enviar relato</button>
+
+</form>
+</section>
+
+<a href="https://wa.me/5527998732965" class="whatsapp" target="_blank">💬</a>
+
+</body>
+</html>

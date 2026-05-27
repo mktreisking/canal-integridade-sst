@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Técnica SST</title>
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="login-page">
+
+<div class="login-box">
+<img src="img/logo-arcel.png" class="login-logo">
+
+<h1>Área Técnica SST</h1>
+<p>Acesso restrito para acompanhamento dos relatos.</p>
+
+<label>Usuário:</label>
+<input type="text" id="usuario" placeholder="Digite seu usuário">
+
+<label>Senha:</label>
+<input type="password" id="senha" placeholder="Digite sua senha">
+
+<button onclick="entrarPainel()">Entrar</button>
+
+<small id="erroLogin"></small>
+</div>
+
+<script>
+function entrarPainel(){
+const usuario = document.getElementById("usuario").value;
+const senha = document.getElementById("senha").value;
+
+if(usuario === "TSTLar" && senha === "caioz&lca"){
+window.location.href = "painel.html";
+}else{
+document.getElementById("erroLogin").innerText = "Usuário ou senha incorretos.";
+}
+}
+</script>
+
+</body>
+</html>
