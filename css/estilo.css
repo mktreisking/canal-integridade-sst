@@ -164,22 +164,7 @@ height:180px;
 resize:none;
 }
 
-button{
-background:#0044ff;
-color:white;
-border:none;
-padding:17px;
-border-radius:12px;
-font-size:22px;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
-}
 
-button:hover{
-transform:scale(1.05);
-opacity:0.9;
-}
 
 .anonimo{
 display:flex;
@@ -426,4 +411,24 @@ color:#1e2fff;
 margin-bottom:20px;
 font-size:16px;
 color:#333;
+}
+.acao-btn{
+width:160px;
+height:160px;
+background:#ff004c;
+color:white;
+border:none;
+border-radius:18px;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:0.3s;
+}
+
+.acao-btn:hover{
+transform:scale(1.05);
+opacity:0.9;
 }
