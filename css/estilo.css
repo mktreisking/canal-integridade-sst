@@ -165,7 +165,7 @@ resize:none;
 }
 
 button{
-background:#ff004c;
+background:#0044ff;
 color:white;
 border:none;
 padding:17px;
@@ -173,6 +173,12 @@ border-radius:12px;
 font-size:22px;
 font-weight:bold;
 cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+opacity:0.9;
 }
 
 .anonimo{

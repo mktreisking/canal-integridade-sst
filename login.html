@@ -28,8 +28,8 @@
 
 <script>
 function entrarPainel(){
-const usuario = document.getElementById("usuario").value;
-const senha = document.getElementById("senha").value;
+const usuario = document.getElementById("usuario").value.trim();
+const senha = document.getElementById("senha").value.trim();
 
 if(usuario === "TSTLar" && senha === "caioz&lca"){
 window.location.href = "painel.html";
@@ -37,6 +37,7 @@ window.location.href = "painel.html";
 document.getElementById("erroLogin").innerText = "Usuário ou senha incorretos.";
 }
 }
+
 </script>
 
 </body>
