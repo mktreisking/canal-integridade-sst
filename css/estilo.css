@@ -265,18 +265,22 @@ margin-bottom:35px;
 }
 
 .relatorios{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+align-items:flex-start;
+gap:30px;
+margin-top:40px;
 }
 
 .relato{
+width:260px;
+min-height:220px;
 background:white;
 padding:25px;
 border-radius:18px;
 box-shadow:0 5px 15px rgba(0,0,0,0.12);
 }
-
 .relato h3{
 color:#001aff;
 font-size:28px;
