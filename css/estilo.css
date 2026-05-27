@@ -413,13 +413,13 @@ font-size:16px;
 color:#333;
 }
 .acao-btn{
-width:160px;
-height:160px;
+width:90px;
+height:90px;
 background:#ff004c;
 color:white;
 border:none;
-border-radius:18px;
-font-size:20px;
+border-radius:12px;
+font-size:14px;
 font-weight:bold;
 cursor:pointer;
 display:flex;
