@@ -3,82 +3,268 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Painel SST</title>
-<link rel="stylesheet" href="css/estilo.css">
+<title>Painel da Técnica SST</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6fb;
+    padding:30px;
+}
+
+.painel{
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.topo{
+    background:#001eff;
+    color:white;
+    padding:30px;
+    border-radius:16px;
+    margin-bottom:40px;
+}
+
+.topo h1{
+    font-size:36px;
+}
+
+.topo p{
+    font-size:18px;
+    margin-top:5px;
+}
+
+.relatorios{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+}
+
+.relato{
+    width:300px;
+    min-height:330px;
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.12);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.relato h3{
+    color:#001aff;
+    font-size:28px;
+    margin-bottom:18px;
+}
+
+.relato p{
+    font-size:16px;
+    margin-bottom:8px;
+    color:#222;
+}
+
+.rodape-card{
+    margin-top:auto;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.status{
+    display:inline-block;
+    color:white;
+    padding:10px 18px;
+    border-radius:20px;
+    font-weight:bold;
+    text-align:center;
+    width:fit-content;
+}
+
+.pendente{
+    background:#f07b00;
+}
+
+.analise{
+    background:#0055ff;
+}
+
+.resolvido{
+    background:#00b328;
+}
+
+.acao-btn{
+    width:120px;
+    height:45px;
+    background:#ff004c;
+    color:white;
+    border:none;
+    border-radius:12px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.acao-btn:hover{
+    transform:scale(1.05);
+    opacity:0.9;
+}
+
+.popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.popup-box{
+    background:white;
+    width:360px;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    text-align:center;
+}
+
+.popup-box h2{
+    color:#001aff;
+    margin-bottom:15px;
+}
+
+.popup-box p{
+    font-size:16px;
+    color:#333;
+    margin-bottom:20px;
+}
+
+.fechar-btn{
+    background:#ff004c;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+@media(max-width:700px){
+    body{
+        padding:15px;
+    }
+
+    .topo h1{
+        font-size:28px;
+    }
+
+    .relato{
+        width:100%;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <div class="painel">
 
-<div class="topo">
-<h1>Painel da Técnica SST</h1>
-<p>Canal de Integridade e Segurança</p>
-</div>
+    <div class="topo">
+        <h1>Painel da Técnica SST</h1>
+        <p>Canal de Integridade e Segurança</p>
+    </div>
 
-<div class="relatorios">
+    <div class="relatorios">
 
-<div class="relato">
-<h3>Relato #001</h3>
-<p><strong>Tipo:</strong> Denúncia</p>
-<p><strong>Setor:</strong> Produção</p>
-<p>Funcionário relatou possível risco de acidente na área operacional.</p>
-<span class="status pendente">Pendente</span>
-<button class="acao-btn" onclick="abrirPopup(0)">Ver detalhes</button>
-</div>
+        <div class="relato">
+            <div>
+                <h3>Relato #001</h3>
+                <p><strong>Tipo:</strong> Denúncia</p>
+                <p><strong>Setor:</strong> Produção</p>
+                <p>Funcionário relatou possível risco de acidente na área operacional.</p>
+            </div>
 
-<div class="relato">
-<h3>Relato #002</h3>
-<p><strong>Tipo:</strong> Sugestão</p>
-<p><strong>Setor:</strong> Administrativo</p>
-<p>Solicitação de melhoria ergonômica.</p>
-<span class="status analise">Em análise</span>
-<button class="acao-btn" onclick="abrirPopup(1)">Ver detalhes</button>
-</div>
+            <div class="rodape-card">
+                <span class="status pendente">Pendente</span>
+                <button class="acao-btn" onclick="abrirPopup(0)">Ver detalhes</button>
+            </div>
+        </div>
 
-<div class="relato">
-<h3>Relato #003</h3>
-<p><strong>Tipo:</strong> Reclamação</p>
-<p><strong>Setor:</strong> Manutenção</p>
-<p>Equipamento sem sinalização adequada.</p>
-<span class="status resolvido">Resolvido</span>
-<button class="acao-btn" onclick="abrirPopup(2)">Ver detalhes</button>
-</div>
+        <div class="relato">
+            <div>
+                <h3>Relato #002</h3>
+                <p><strong>Tipo:</strong> Sugestão</p>
+                <p><strong>Setor:</strong> Administrativo</p>
+                <p>Solicitação de melhoria ergonômica.</p>
+            </div>
 
-</div>
+            <div class="rodape-card">
+                <span class="status analise">Em análise</span>
+                <button class="acao-btn" onclick="abrirPopup(1)">Ver detalhes</button>
+            </div>
+        </div>
+
+        <div class="relato">
+            <div>
+                <h3>Relato #003</h3>
+                <p><strong>Tipo:</strong> Reclamação</p>
+                <p><strong>Setor:</strong> Manutenção</p>
+                <p>Equipamento sem sinalização adequada.</p>
+            </div>
+
+            <div class="rodape-card">
+                <span class="status resolvido">Resolvido</span>
+                <button class="acao-btn" onclick="abrirPopup(2)">Ver detalhes</button>
+            </div>
+        </div>
+
+    </div>
 
 </div>
 
 <div id="popup" class="popup">
-<div class="popup-box">
-<h2>Detalhes do Relato</h2>
-<p id="textoPopup">Informações do relato aparecerão aqui.</p>
-<button class="fechar-btn" onclick="fecharPopup()">Fechar</button>
-</div>
+    <div class="popup-box">
+        <h2>Detalhes do Relato</h2>
+        <p id="textoPopup">Informações do relato aparecerão aqui.</p>
+        <button class="fechar-btn" onclick="fecharPopup()">Fechar</button>
+    </div>
 </div>
 
 <script>
 function abrirPopup(index){
-const popup = document.getElementById("popup");
-const texto = document.getElementById("textoPopup");
+    const popup = document.getElementById("popup");
+    const texto = document.getElementById("textoPopup");
 
-if(index === 0){
-texto.innerText = "Funcionário relatou possível risco de acidente na área operacional.";
-}
+    if(index === 0){
+        texto.innerText = "Funcionário relatou possível risco de acidente na área operacional.";
+    }
 
-if(index === 1){
-texto.innerText = "Solicitação de melhoria ergonômica no setor administrativo.";
-}
+    if(index === 1){
+        texto.innerText = "Solicitação de melhoria ergonômica no setor administrativo.";
+    }
 
-if(index === 2){
-texto.innerText = "Equipamento sem sinalização adequada no setor de manutenção.";
-}
+    if(index === 2){
+        texto.innerText = "Equipamento sem sinalização adequada no setor de manutenção.";
+    }
 
-popup.style.display = "flex";
+    popup.style.display = "flex";
 }
 
 function fecharPopup(){
-document.getElementById("popup").style.display = "none";
+    document.getElementById("popup").style.display = "none";
 }
 </script>
 
