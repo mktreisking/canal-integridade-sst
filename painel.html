@@ -3,11 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Painel SST</title>
-
 <link rel="stylesheet" href="css/estilo.css">
-
 </head>
 
 <body>
@@ -23,123 +20,67 @@
 
 <div class="relato">
 <h3>Relato #001</h3>
-
 <p><strong>Tipo:</strong> Denúncia</p>
 <p><strong>Setor:</strong> Produção</p>
-
-<p>
-Funcionário relatou possível risco de acidente na área operacional.
-</p>
-
+<p>Funcionário relatou possível risco de acidente na área operacional.</p>
 <span class="status pendente">Pendente</span>
-
+<button class="acao-btn" onclick="abrirPopup(0)">Ver detalhes</button>
 </div>
 
-<br><br>
-
-<button class="acao-btn">Ver detalhes</button>
-
 <div class="relato">
-
 <h3>Relato #002</h3>
-
 <p><strong>Tipo:</strong> Sugestão</p>
 <p><strong>Setor:</strong> Administrativo</p>
-
 <p>Solicitação de melhoria ergonômica.</p>
-
 <span class="status analise">Em análise</span>
-
+<button class="acao-btn" onclick="abrirPopup(1)">Ver detalhes</button>
 </div>
-
-<br><br>
-
-<button class="acao-btn">Ver detalhes</button>
 
 <div class="relato">
-
 <h3>Relato #003</h3>
-
 <p><strong>Tipo:</strong> Reclamação</p>
 <p><strong>Setor:</strong> Manutenção</p>
-
 <p>Equipamento sem sinalização adequada.</p>
-
 <span class="status resolvido">Resolvido</span>
-
+<button class="acao-btn" onclick="abrirPopup(2)">Ver detalhes</button>
 </div>
 
-<br><br>
-
-<button class="acao-btn">Ver detalhes</button>
+</div>
 
 </div>
 
 <div id="popup" class="popup">
-
 <div class="popup-box">
-
 <h2>Detalhes do Relato</h2>
-
-<p id="textoPopup">
-Informações do relato aparecerão aqui.
-</p>
-
-<button onclick="fecharPopup()" class="acao-btn">
-Fechar
-</button>
-
+<p id="textoPopup">Informações do relato aparecerão aqui.</p>
+<button class="fechar-btn" onclick="fecharPopup()">Fechar</button>
 </div>
-
 </div>
 
 <script>
-
-const botoes = document.querySelectorAll(".acao-btn");
-
-botoes.forEach((botao, index) => {
-
-botao.addEventListener("click", () => {
-
+function abrirPopup(index){
 const popup = document.getElementById("popup");
 const texto = document.getElementById("textoPopup");
 
 if(index === 0){
-
-texto.innerText =
-"Funcionário relatou possível risco de acidente na área operacional.";
-
+texto.innerText = "Funcionário relatou possível risco de acidente na área operacional.";
 }
 
 if(index === 1){
-
-texto.innerText =
-"Solicitação de melhoria ergonômica.";
-
+texto.innerText = "Solicitação de melhoria ergonômica no setor administrativo.";
 }
 
 if(index === 2){
-
-texto.innerText =
-"Equipamento sem sinalização adequada.";
-
+texto.innerText = "Equipamento sem sinalização adequada no setor de manutenção.";
 }
 
 popup.style.display = "flex";
-
-});
-
-});
-
-function fecharPopup(){
-
-document.getElementById("popup").style.display = "none";
-
 }
 
+function fecharPopup(){
+document.getElementById("popup").style.display = "none";
+}
 </script>
-
-</div>
 
 </body>
 </html>
