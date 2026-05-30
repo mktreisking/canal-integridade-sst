@@ -274,12 +274,16 @@ margin-top:40px;
 }
 
 .relato{
-width:260px;
-min-height:220px;
-background:white;
-padding:25px;
-border-radius:18px;
-box-shadow:0 5px 15px rgba(0,0,0,0.12);
+    width:260px;
+    min-height:220px;
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.12);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 }
 .relato h3{
 color:#001aff;
@@ -417,19 +421,21 @@ font-size:16px;
 color:#333;
 }
 .acao-btn{
-width:90px;
-height:90px;
-background:#ff004c;
-color:white;
-border:none;
-border-radius:12px;
-font-size:14px;
-font-weight:bold;
-cursor:pointer;
-display:flex;
-align-items:center;
-justify-content:center;
-transition:0.3s;
+    width:90px;
+    height:90px;
+    background:#ff004c;
+    color:white;
+    border:none;
+    border-radius:12px;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:0.3s;
+
+    margin-top:auto;
 }
 
 .acao-btn:hover{
