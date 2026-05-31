@@ -442,3 +442,20 @@ color:#333;
 transform:scale(1.05);
 opacity:0.9;
 }
+.form-area button{
+    width:100%;
+    background:#ff004c;
+    color:white;
+    border:none;
+    padding:16px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+.form-area button:hover{
+    opacity:0.9;
+    transform:scale(1.01);
+}
